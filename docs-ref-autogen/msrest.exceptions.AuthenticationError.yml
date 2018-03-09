@@ -29,6 +29,6 @@ items:
     '
   syntax:
     content: AuthenticationError(message, inner_exception=None, *args, **kwargs)
-  type: class
+  type: exception
   uid: msrest.exceptions.AuthenticationError
 references: []
