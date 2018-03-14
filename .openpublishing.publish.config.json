@@ -3,9 +3,10 @@
     {
       "docset_name": "e2eppe-python-sdk",
       "build_source_folder": ".",
-      "build_output_subfolder": "e2eppe-azure-python-sdk",
+      "build_output_subfolder": "e2eppe-python-sdk",
       "locale": "en-us",
       "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
