@@ -3,7 +3,7 @@
   "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
-      "docset_name": "python-sdk",
+      "docset_name": "e2eppe-python-sdk",
       "build_source_folder": ".",
       "build_output_subfolder": "azure-python-sdk",
       "locale": "en-us",
