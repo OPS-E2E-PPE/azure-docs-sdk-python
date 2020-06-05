@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  fullName: azure.mgmt.msi.version
+  langs:
+  - python
+  module: azure.mgmt.msi.version
+  name: version
+  type: module
+  uid: azure.mgmt.msi.version
+references: []

@@ -3,7 +3,7 @@ title: Azure Batch libraries for Python
 description: Reference documentation for the Python Batch libraries 
 keywords: Azure, Python, SDK, API, Batch, processing, scheduling, long-running
 author: lisawong19
-ms.author: liwong
+ms.author: routlaw
 manager: douge
 ms.date: 07/31/2017
 ms.topic: article
@@ -17,7 +17,7 @@ ms.service: batch
 
 ## Overview
 
-Run large-scale parallel and high-performance computing applications efficiently in the cloud with [Azure Batch](/azure/batch/batch-technical-overview).   
+Run large-scale parallel and high-performance computing applications efficiently in the cloud with [Azure Batch](/azure/batch/batch-technical-overview).
 
 To get started with Azure Batch, see [Create a Batch account with the Azure portal](/azure/batch/batch-account-create-portal).
 
@@ -53,14 +53,15 @@ new_pool.virtual_machine_configuration = vmc
 client.pool.add(new_pool)
 ```
 
+> [!div class="nextstepaction"]
+> [Explore the Client APIs](/python/api/overview/azure/batch/client)
+
 ## Management API
 Use the Azure Batch management libraries to create and delete batch accounts, read and regenerate batch account keys, and manage batch account storage.
 
 ```bash
 pip install azure-mgmt-batch
 ```
-> [!div class="nextstepaction"]
-> [Explore the Client APIs](/python/api/overview/azure/batch/client)
 
 ### Example
 Create an Azure Batch account and configure a new application and Azure storage account for it.

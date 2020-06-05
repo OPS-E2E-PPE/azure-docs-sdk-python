@@ -1,90 +1,131 @@
 ---
 title: Azure Key Vault libraries for Python
 description: Reference documentation for the Python client libraries for Azure Key Vault
-author: lisawong19
-keywords: Azure, Python, SDK, API, Keys, Key Vault, Authentication, Secret, key, security
-manager: douge
-ms.author: liwong
-ms.date: 07/18/2017
-ms.topic: article
+author: sptramer
+manager: carmonm
+ms.author: sttramer
+ms.date: 11/25/2019
+ms.topic: conceptual
 ms.devlang: python
-ms.service: keyvault
+ms.service: key-vault
 ---
+
 # Azure Key Vault libraries for Python
 
-## Overview
+[Azure Key Vault](/azure/key-vault/) is Azure's storage and management system for cryptographic keys, secrets, and certificate
+management. The Python SDK API for Key Vault is split between client libraries and management libraries.
 
-Create, update, and delete keys and secrets in Azure Key Vault with the client libraries.
+Use the following client libraries to:
+- Create, store, and control access to the keys used to encrypt your data (azure-keyvault-keys)
+- Securely store and control access to tokens, passwords, API keys, and other secrets (azure-keyvault-secrets)
+- Create, manage, and deploy SSL/TLS certificates (azure-keyvault-certificates)
 
-Use the Azure Key Vault management libraries to create key vaults, authorize applications, and manage permissions. 
-
-Learn more about [Azure Key Vault](/azure/key-vault/key-vault-whatis).
+Use the management library to:
+- Create, update, or delete new Key Vault stores
+- Control vault access policies
+- List vaults by subscription or resource group
+- Check for vault name availability
 
 ## Install the libraries
 
 ### Client library
+
 ```bash
-pip install azure-keyvault
+pip install azure-keyvault-secrets 
+pip install azure-keyvault-keys
+pip install azure-keyvault-certificates
+pip install azure-identity
 ```
 
-## Example
-Retrieve a [JSON web key](https://tools.ietf.org/html/draft-ietf-jose-json-web-key-18) from a Key Vault.
+## Examples
+
+Retrieve the public portion of an asymmetric key from a vault:
 
 ```python
-from azure.keyvault import KeyVaultClient, KeyVaultAuthentication
-from azure.common.credentials import ServicePrincipalCredentials
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.keys import KeyClient
 
-credentials = None
+credential = DefaultAzureCredential()
 
-def auth_callack(server, resource, scope):
-    credentials = credentials or ServicePrincipalCredentials(
-        client_id = '', #client id
-        secret = '',
-        tenant = '',
-        resource = resource
-    )
-    token = credentials.token
-    return token['token_type'], token['access_token']
+key_client = KeyClient("https://<vaultname>.vault.azure.net", credential)
 
-client = KeyVaultClient(KeyVaultAuthentication(auth_callack))
-
-key_bundle = client.get_key(vault_url, key_name, key_version)
-json_key = key_bundle.key
+# NOTE: please replace the ("<your-key-name>") with the name of your key in the vault 
+key = key_client.get_key("<your-key-name>")
+print(key.name)
 ```
-[!div class="nextstepaction"]
-[Explore the Client APIs](/python/api/overview/azure/keyvault/client)
 
-### Management API
+Retrieve a secret from a vault:
+
+```python
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+
+credential = DefaultAzureCredential()
+
+secret_client = SecretClient(vault_url="https://<vaultname>.vault.azure.net", credential=credential)
+
+# NOTE: please replace the ("<your-secret-name>") with the name of the secret in your vault
+secret = secret_client.get_secret("secret-name")
+
+print(secret.value)
+
+```
+Find more details about latest packages [here](https://azure.github.io/azure-sdk/releases/latest/index.html).
+Follow the link to the source code directory to find the latest key vault README, Change Log and Examples.
+
+> [!div class="nextstepaction"]
+> [Get Started with the Client APIs](/azure/key-vault/quick-create-python)
+
+### Management library
+
 ```bash
 pip install azure-mgmt-keyvault
 ```
 
 ### Example
+
 The following example shows how to create an Azure Key Vault. 
 
 ```python
 from azure.mgmt.keyvault import KeyVaultManagementClient
+from azure.common.credentials import ServicePrincipalCredentials
 
-GROUP_NAME = 'your_resource_group_name'
-KV_NAME = 'your_key_vault_name'
-#The object ID of the User or Application for access policies. Find this number in the portal
-OBJECT_ID = '00000000-0000-0000-0000-000000000000'
 
-kv_client = KeyVaultManagementClient(credentials, subscription_id)
+credentials = ServicePrincipalCredentials(
+    client_id = '...',
+    secret = '...',
+    tenant = '...'
+)
 
-vault = kv_client.vaults.create_or_update(
-    GROUP_NAME,
-    KV_NAME,
+# Even when using service principal credentials, a subscription ID is required. For service principals,
+# this should be the subscription used to create the service principal. Storing a token like a valid
+# subscription ID in code is not recommended and only shown here for example purposes.
+SUBSCRIPTION_ID = '...'
+client = KeyVaultManagementClient(credentials, SUBSCRIPTION_ID)
+
+# The object ID and organization ID (tenant) of the user, application, or service principal for access policies.
+# These values can be found through the Azure CLI or the Portal.
+ALLOW_OBJECT_ID = '...'
+ALLOW_TENANT_ID = '...'
+
+RESOURCE_GROUP = '...'
+VAULT_NAME = '...'
+
+# Vault properties may also be created by using the azure.mgmt.keyvault.models.VaultCreateOrUpdateParameters
+# class, rather than a map. 
+operation = client.vaults.create_or_update(
+    RESOURCE_GROUP,
+    VAULT_NAME,
     {
         'location': 'eastus',
         'properties': {
             'sku': {
                 'name': 'standard'
             },
-            'tenant_id': os.environ['AZURE_TENANT_ID'],
+            'tenant_id': ALLOW_TENANT_ID,
             'access_policies': [{
-                'tenant_id': os.environ['AZURE_TENANT_ID'],
-                'object_id': OBJECT_ID,
+                'object_id': ALLOW_OBJECT_ID,
+                'tenant_id': ALLOW_TENANT_ID,
                 'permissions': {
                     'keys': ['all'],
                     'secrets': ['all']
@@ -93,16 +134,17 @@ vault = kv_client.vaults.create_or_update(
         }
     }
 )
+
+vault = operation.result()
+print(f'New vault URI: {vault.properties.vault_uri}')
 ```
-> [!div class="nextstepaction"]
-> [Explore the Management APIs](/python/api/azure.mgmt.keyvault)
 
 > [!div class="nextstepaction"]
 > [Explore the Management APIs](/python/api/overview/azure/keyvault/management)
 
 ## Samples
-* [Manage Key Vaults][1] 
-* [Key Vault recovery][2]
+* [Manage Azure Key Vaults][1] 
+* [Azure Key Vault recovery][2]
 
 [1]: https://azure.microsoft.com/resources/samples/key-vault-python-manage/
 [2]: https://azure.microsoft.com/resources/samples/key-vault-recovery-python/

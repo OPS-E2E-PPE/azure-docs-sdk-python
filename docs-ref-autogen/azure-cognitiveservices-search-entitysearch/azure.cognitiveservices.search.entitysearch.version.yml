@@ -1,0 +1,12 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  fullName: azure.cognitiveservices.search.entitysearch.version
+  langs:
+  - python
+  module: azure.cognitiveservices.search.entitysearch.version
+  name: version
+  type: module
+  uid: azure.cognitiveservices.search.entitysearch.version
+references: []

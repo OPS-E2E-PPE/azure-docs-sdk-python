@@ -3,12 +3,12 @@ title: Azure Cosmos DB libraries for Python
 description: Reference documentation for the Python client libraries for Azure Cosmos DB
 keywords: Azure, Python, SDK, API, SQL, database, PostGres,Cosmos DB, NoSQL 
 author: lisawong19
-ms.author: liwong
+ms.author: routlaw
 manager: douge
 ms.date: 03/20/2018
 ms.topic: article
 ms.devlang: python
-ms.service: cosmosdb
+ms.service: cosmos-db
 ---
 
 # Azure Cosmos DB libraries for Python
@@ -79,6 +79,14 @@ print(results)
 
 ## Samples
 
-[Develop a Python app using Azure Cosmos DB](https://azure.microsoft.com/resources/samples/azure-cosmos-db-documentdb-python-getting-started/)
+* [Develop a Python app to access and manage data stored in Azure Cosmos DB SQL API account](https://github.com/Azure-Samples/azure-cosmos-db-python-getting-started.git)
+
+* [Develop a Python app to access and manage data stored in Azure Cosmos DB MongoDB API account](https://github.com/Azure-Samples/CosmosDB-Flask-Mongo-Sample.git)
+
+* [Develop a Python app to access and manage data stored in Azure Cosmos DB Gremlin API account](https://github.com/Azure-Samples/azure-cosmos-db-graph-python-getting-started.git)
+
+* [Develop a Python app to access and manage data stored in Azure Cosmos DB Cassandra API account](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-python-getting-started.git)
+
+* [Develop a Python app to access and manage data stored in Azure Cosmos DB Table API account](https://github.com/Azure-Samples/storage-python-getting-started.git)
 
 

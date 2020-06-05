@@ -1,12 +1,13 @@
 {
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
-      "docset_name": "e2eppe-python-sdk",
+      "docset_name": "python-sdk",
       "build_source_folder": ".",
-      "build_output_subfolder": "e2eppe-python-sdk",
+      "build_output_subfolder": "azure-python-sdk",
       "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
+      "moniker_ranges": ["azure-python", "azure-python-preview","azure-python-previous"],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -20,35 +21,45 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "customized_template_paths": [
-        "_dependentPackages/uref/content"
+         "_dependentPackages/uref/content"
       ],
-      "customized_tasks": {
+       "customized_tasks": {
         "docset_prebuild": [
+          "_dependentPackages/CommonPlugins/tools/SplitTOC.ps1",
           "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1",
           "_dependentPackages/CommonPlugins/tools/DiffFolder.ps1"
         ]
       },
+      "DiffFolder": [
+        "api"
+      ],
       "version": 0
     }
   ],
   "notification_subscribers": [],
   "branches_to_filter": [],
-  "git_repository_branch_open_to_public_contributors": "master",
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": false,
-  "contribution_branch_mappings": {},
+  "need_preview_pull_request": true,
+  "enable_incremental_build": false,
+  "error_log_codes": ["DuplicateOutputFiles"],
+  "SplitTOC": [
+    "docs-ref-autogen/toc.yml"
+  ],
+  "git_repository_branch_open_to_public_contributors": "master",
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "aci-docs-sample-python",
+      "url": "https://github.com/Azure-Samples/aci-docs-sample-python",
+      "branch": "master",
+      "branch_mapping": {}
     }
   ],
-  "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false,
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "id": "opbuild.templates.uref",
@@ -69,19 +80,38 @@
     {
       "TopLevelTOC": "docs-ref-mapping/reference.yml",
       "ReferenceTOC": "docs-ref-autogen/toc.yml",
-      "ConceptualTOC": "docs-ref-conceptual/toc.yml",
-      "ReferenceTOCUrl": "/python/api/toc.json",
-      "ConceptualTOCUrl": "/python/azure/toc.json",
+      "ReferenceTOCUrl": "/python/api/toc.json?view=azure-python",
+      "ConceptualTOCUrl": "/azure/python/toc.json?view=master",
+      "ConceptualTOCUrl": "/azure/python/toc.json?branch=master",
       "OutputFolder": "docs-ref-autogen/overview/azure",
       "ContainerPageMetadata": {
-        "langs": [
-          "python"
-        ]
+        "langs": ["python"]
+      },
+      "ContainerPageYamlMime": "YamlMime:UniversalReference"
+    },
+    {
+      "TopLevelTOC": "docs-ref-mapping/reference-preview.yml",
+      "ReferenceTOC": "preview/docs-ref-autogen/toc.yml",
+      "ConceptualTOCUrl": "/azure/python/toc.json?branch=master",
+      "OutputFolder": "preview/docs-ref-autogen/overview/azure",
+      "ContainerPageMetadata": {
+        "langs": ["python"]
+      },
+      "ContainerPageYamlMime": "YamlMime:UniversalReference"
+    },
+    {
+      "TopLevelTOC": "docs-ref-mapping/reference-previous.yml",
+      "ReferenceTOC": "previous/docs-ref-autogen/toc.yml",
+      "ConceptualTOCUrl": "/azure/python/toc.json?branch=master",
+      "OutputFolder": "previous/docs-ref-autogen/overview/azure",
+      "ContainerPageMetadata": {
+        "langs": ["python"]
       },
       "ContainerPageYamlMime": "YamlMime:UniversalReference"
     }
   ],
   "DiffFolder": [
     "docs-ref-autogen/overview/azure"
-  ]
+  ],
+  "need_generate_pdf_url_template": false
 }

@@ -5,13 +5,46 @@
   items:
   - name: Active Directory
     uid: azure.python.sdk.landingPage.services.Active.Directory
-    href: ~/docs-ref-services/activedirectory.md
+    landingPageType: Service
     items:
     - name: Client
       uid: azure.python.sdk.landingPage.services.Active.Directory.Client
       landingPageType: Service
       children:
-      - 'azure-graphrbac*'
+      - 'adal*'
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Active.Directory.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-msi*'
+  - name: Advisor
+    uid: azure.python.sdk.landingPage.services.Advisor
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Advisor.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-advisor*'
+  - name: App Configuration
+    uid: azure.python.sdk.landingPage.services.AppConfiguration
+    href: ~/docs-ref-services/appconfiguration-readme.md
+    children:
+      - 'azure-appconfiguration'
+  - name: Application Insights
+    uid: azure.python.sdk.landingPage.services.ApplicationInsights
+    landingPageType: Service
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.ApplicationInsights.Client
+      landingPageType: Service
+      children:
+      - 'azure-applicationinsights'
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.ApplicationInsights.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-applicationinsights'
   - name: Authorization
     uid: azure.python.sdk.landingPage.services.Authorization
     href: ~/docs-ref-services/authorization.md
@@ -20,9 +53,21 @@
       uid: azure.python.sdk.landingPage.services.Authorization.Management
       landingPageType: Service
       children:
-      - 'azure-mgmt-authorization*'      
+      - 'azure-mgmt-authorization*'
+  - name: Azure Core
+    uid: azure.python.sdk.landingPage.services.Azure.Core
+    href: ~/docs-ref-services/core-readme.md
+    children:
+      - 'azure-core*'
+      - 'azure-mgmt-core*'
+  - name: Azure Identity
+    uid: azure.python.sdk.landingPage.services.identity
+    href: ~/docs-ref-services/identity-readme.md
+    children:
+      - 'azure-identity'
   - name: Batch AI
     uid: azure.python.sdk.landingPage.services.BatchAI
+    href: ~/docs-ref-services/batchai.md
     landingPageType: Service
     items:
     - name: Management
@@ -32,7 +77,7 @@
       - 'azure-mgmt-batchai'
   - name: Batch
     uid: azure.python.sdk.landingPage.services.Batch
-    href: ~/docs-ref-services/batch.md 
+    href: ~/docs-ref-services/batch.md
     items:
     - name: Management
       uid: azure.python.sdk.landingPage.services.Batch.Management
@@ -58,7 +103,7 @@
     href: ~/docs-ref-services/cdn.md
     items:
     - name: Management
-      uid: azure.python.sdk.landingPage.services.CDN
+      uid: azure.python.sdk.landingPage.services.CDN.Management
       landingPageType: Service
       children:
       - 'azure-mgmt-cdn*'
@@ -66,16 +111,106 @@
     uid: azure.python.sdk.landingPage.services.Cognitive.Services
     href: ~/docs-ref-services/cognitive-services.md
     items:
+    - name: Anomaly Detector
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.AnomalyDetector
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-anomalydetector*'
+    - name: Auto Suggest
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Search.AutoSuggest
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-autosuggest*'
+    - name: Computer Vision
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Computer.Vision
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-vision-computervision*'
+    - name: Content Moderator
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Content.Moderator
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-vision-contentmoderator*'
+    - name: Custom Vision
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Custom.Vision
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-vision-customvision*'
+    - name: LUIS
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Language.LUIS
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-language-luis*'
+    - name: Web Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Web.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-websearch*'
+    - name: Image Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Image.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-imagesearch*'
+    - name: Entity Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Entity.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-entitysearch*'
+    - name: Custom Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Custom.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-customsearch*'
+    - name: Visual Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Visual.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-visualsearch*'
+    - name: Video Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.Video.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-videosearch*'
+    - name: News Search
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Bing.News.Search
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-search-newssearch*'
+    - name: Face API
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Face
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-vision-face*'
+    - name: Text Analytics
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Text.Analytics
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-language-textanalytics*'
+    - name: Speech
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Speech
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-speech*'
+    - name: Spell Check
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Text.SpellCheck
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-language-spellcheck*'
+    - name: QnA Maker
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Knowledge.QnAMaker
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-knowledge-qnamaker*'
+    - name: Personalizer
+      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Personalizer
+      landingPageType: Service
+      children:
+      - 'azure-cognitiveservices-personalizer'
     - name: Management
       uid: azure.python.sdk.landingPage.services.Cognitive.Services.Management
       landingPageType: Service
       children:
-      - 'azure-mgmt-cognitiveservices*'
-    - name: Client
-      uid: azure.python.sdk.landingPage.services.Cognitive.Services.Client
-      landingPageType: Service
-      children:
-      - 'azure-cognitive*'
+      - 'azure-mgmt-cognitiveservices*'      
   - name: Commerce
     uid: azure.python.sdk.landingPage.services.Commerce.Usage
     href: ~/docs-ref-services/commerce.md
@@ -96,7 +231,7 @@
       - 'azure-mgmt-consumption*'
   - name: Container Instance
     uid: azure.python.sdk.landingPage.services.Container.Instance
-    landingPageType: Service
+    href: ~/docs-ref-services/containerinstance.md
     items:
     - name: Management
       uid: azure.python.sdk.landingPage.services.Container.Instance.Management
@@ -126,18 +261,27 @@
     href: ~/docs-ref-services/cosmosdb.md
     items:
     - name: Client
-      uid: azure.python.sdk.landingPage.services.Cosmos.DB.Client
-      landingPageType: Service
+      uid: azure.python.sdk.landingPage.services.Cosmos.DB.detail
+      href: ~/docs-ref-services/cosmos-readme.md
       children:
-      - 'azure-cosmosdb*'
+      - 'azure-cosmos*'
+      - 'pydocumentdb*'
     - name: Management
       uid: azure.python.sdk.landingPage.services.Cosmos.DB.Management
       landingPageType: Service
       children:
       - 'azure-mgmt-cosmosdb*'
+  - name: Data Box Edge / Data Box Gateway
+    uid: azure.python.sdk.landingPage.services.DataBox.EdgeGateway
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.DataBox.EdgeGateway.Client
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-edgegateway*'      
   - name: Data Factory
     uid: azure.python.sdk.landingPage.services.Data.Factory
-    landingPageType: Service
+    href: ~/docs-ref-services/datafactory.md
     items:
     - name: Management
       uid: azure.python.sdk.landingPage.services.Data.Factory.Management
@@ -162,6 +306,19 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-datalake-store*'
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.Data.Lake.Store.Client
+      href: ~/docs-ref-services/adls-gen1-client.md
+      children:
+      - 'azure-datalake-store*'
+  - name: Deployment Manager
+    uid: azure.python.sdk.landingPage.services.Deployment.Manager
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.DeploymentManager.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-deploymentmanager*'
   - name: DevTest Labs
     uid: azure.python.sdk.landingPage.services.DevTest.Labs
     href: ~/docs-ref-services/devtest-labs.md
@@ -180,7 +337,8 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-dns*'
-  - name: Event Hub
+      - 'azure-mgmt-privatedns*'
+  - name: Event Hubs
     uid: azure.python.sdk.landingPage.services.Event.Hub
     href: ~/docs-ref-services/event-hub.md
     items:
@@ -189,6 +347,21 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-eventhub*'
+    - name: Event Hubs Client
+      uid: azure.python.sdk.landingPage.services.Event.Hub.Client
+      href: ~/docs-ref-services/eventhub-readme.md
+      children:
+      - 'azure-eventhub'
+    - name: Event Hubs Checkpoint Store Extension
+      uid: azure.python.sdk.landingPage.services.Event.Hub.Client
+      href: ~/docs-ref-services/eventhub-readme.md
+      children:
+      - 'azure-eventhub-checkpointstoreblob'
+    - name: Event Hubs Checkpoint Store Async Extension
+      uid: azure.python.sdk.landingPage.services.Event.Hub.Client
+      href: ~/docs-ref-services/eventhub-readme.md
+      children:
+      - 'azure-eventhub-checkpointstoreblob-aio'
   - name: Event Grid
     uid: azure.python.sdk.landingPage.services.Eventgrid
     href: ~/docs-ref-services/event-grid.md
@@ -203,10 +376,62 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-eventgrid*'
+  - name: Functions
+    uid: azure.python.sdk.landingPage.services.Functions
+    landingPageType: Service
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.Functions.Client
+      landingPageType: Service
+      children:
+      - 'azure-functions*'
+  - name: Graph RBAC
+    uid: azure.python.sdk.landingPage.services.Graph.RBAC
+    href: ~/docs-ref-services/graph-rbac.md
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.Graph.RBAC.Client
+      landingPageType: Service
+      children:
+      - 'azure-graphrbac*'
+  - name: Management Groups
+    uid: azure.python.sdk.landingPage.services.ManagementGroups
+    landingPageType: Service
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.ManagementGroups.Client
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-managementgroups*'
+  - name: Hana on Azure
+    uid: azure.python.sdk.landingPage.services.Hana
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Hana.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-hanaonazure*'
+  - name: HDInsight
+    uid: azure.python.sdk.landingPage.services.hdinsight
+    href: ~/docs-ref-services/hdinsight.md
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.hdinsight.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-hdinsight*'
   - name: IoT
     uid: azure.python.sdk.landingPage.services.IoT
     href: ~/docs-ref-services/iot.md
     items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.IoT.Client
+      landingPageType: Service
+      children:
+      - 'azure-iothub-provisioningserviceclient*'
+      - 'azure-iot-device*'
+      - 'azure-iot-hub*'
     - name: Management
       uid: azure.python.sdk.landingPage.services.IoT.Management
       landingPageType: Service
@@ -216,16 +441,55 @@
     uid: azure.python.sdk.landingPage.services.Key.Vault
     href: ~/docs-ref-services/key-vault.md
     items:
+    - name: Certificates
+      uid: azure.python.sdk.landingPage.services.Key.Vault.Certificates
+      href: ~/docs-ref-services/keyvault-certificates-readme.md
+      children:
+      - 'azure-keyvault-certificates*'
+    - name: Keys
+      uid: azure.python.sdk.landingPage.services.Key.Vault.Keys
+      href: ~/docs-ref-services/keyvault-keys-readme.md
+      children:
+      - 'azure-keyvault-keys*'
+    - name: Secrets
+      uid: azure.python.sdk.landingPage.services.Key.Vault.Secrets
+      href: ~/docs-ref-services/keyvault-secrets-readme.md
+      children:
+      - 'azure-keyvault-secrets*'
     - name: Management
       uid: azure.python.sdk.landingPage.services.Key.Vault.Management
       landingPageType: Service
       children:
       - 'azure-mgmt-keyvault*'
-    - name: Client
-      uid: azure.python.sdk.landingPage.services.Key.Vault.Client
+  - name: Kusto
+    uid: azure.python.sdk.landingPage.services.Kusto
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Kusto.Management
       landingPageType: Service
       children:
-      - 'azure-keyvault*'
+      - 'azure-mgmt-kusto'
+  - name: Lab Services
+    uid: azure.python.sdk.landingPage.services.LabServices
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.LabServices.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-labservices*'
+  - name: Log Analytics
+    uid: azure.python.sdk.landingPage.services.loganalytics
+    items:
+    - name: Client
+      uid: azure.python.sdk.landingPage.services.loganalytics.Client
+      landingPageType: Service
+      children:
+      - 'azure-loganalytics*'
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.loganalytics.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-loganalytics'
   - name: Logic Apps
     uid: azure.python.sdk.landingPage.services.Logic
     href: ~/docs-ref-services/logic-apps.md
@@ -235,15 +499,14 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-logic*'
-  - name: Machine Learning
-    uid: azure.python.sdk.landingPage.services.Machine.Learning.Compute
-    landingPageType: Service
+  - name: Managed Services
+    uid: azure.python.sdk.landingPage.services.ManagedServices
     items:
     - name: Management
-      uid: azure.python.sdk.landingPage.services.Machine.Learning.Compute.Management
+      uid: azure.python.sdk.landingPage.services.ManagedServices.Management
       landingPageType: Service
       children:
-      - 'azure-mgmt-machinelearningcompute*' 
+      - 'azure-mgmt-managedservices*'
   - name: Media Services
     uid: azure.python.sdk.landingPage.services.Media
     href: ~/docs-ref-services/media-services.md
@@ -252,7 +515,16 @@
       uid: azure.python.sdk.landingPage.services.Media.Management
       landingPageType: Service
       children:
-      - 'azure-mgmt-media*' 
+      - 'azure-mgmt-media*'
+  - name: Mixed Reality
+    uid: azure.python.sdk.landingPage.services.MixedReality
+    href: ~/docs-ref-services/mixed-reality.md
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.MixedReality.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-mixedreality*'     
   - name: Monitoring
     uid: azure.python.sdk.landingPage.services.Monitor
     href: ~/docs-ref-services/monitoring.md
@@ -262,15 +534,23 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-monitor*'
-  - name: MySQL
-    href: ~/docs-ref-services/mysql.md
-    uid: azure.python.sdk.landingPage.services.Mysql
+  - name: NetApp
+    uid: azure.python.sdk.landingPage.services.netapp
     items:
     - name: Management
-      uid: azure.python.sdk.landingPage.services.Mysql.Management
+      uid: azure.python.sdk.landingPage.services.NetApp.Management
       landingPageType: Service
       children:
-      - 'azure-mgmt-rdbms-mysql*'
+      - 'azure-mgmt-netapp*'
+  - name: 'PostgreSQL/MySQL'
+    href: ~/docs-ref-services/postgresql-mysql.md
+    uid: azure.python.sdk.landingPage.services.Rdbms
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Rdbms.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-rdbms*'
   - name: Network
     uid: azure.python.sdk.landingPage.services.Network
     href: ~/docs-ref-services/network.md
@@ -289,6 +569,16 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-notificationhubs*'
+  - name: Policy
+    uid: azure.python.sdk.landingPage.services.Policy
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Policy.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-policyinsights*'
+      - 'azure-mgmt-resource.azure.mgmt.resource.policy*'
   - name: Power BI
     uid: azure.python.sdk.landingPage.services.Power.BI
     href: ~/docs-ref-services/power-bi.md
@@ -298,15 +588,6 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-powerbiembedded*'
-  - name: PostgreSQL
-    href: ~/docs-ref-services/postgresql.md
-    uid: azure.python.sdk.landingPage.services.Postgresql
-    items:
-    - name: Management
-      uid: azure.python.sdk.landingPage.services.Postgresql.Management
-      landingPageType: Service
-      children:
-      - 'azure-mgmt-rdbms-postgresql*'
   - name: Recovery Services
     uid: azure.python.sdk.langdingPage.services.Recovery.Services
     landingPageType: Service
@@ -346,12 +627,21 @@
   - name: Resources
     uid: azure.python.sdk.landingPage.services.Resources
     href: ~/docs-ref-services/resources.md
-    items: 
-    - name: azure-mgmt-resource
+    items:
+    - name: Management
       href: ~/docs-ref-services/azure.mgmt.resource.md
-      uid: azure.python.sdk.landingPage.services.azure.mgmt.resource
+      uid: azure.python.sdk.landingPage.services.resource.Management
       children:
-      - 'azure.mgmt.resource*'
+      - 'azure-mgmt-subscription*'
+      - 'azure-mgmt-resource*'
+  - name: Resource Graph
+    uid: azure.python.sdk.landingPage.services.ResourceGraph
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.ResourceGraph.Management
+      children:
+      - 'azure-mgmt-resourcegraph*'
   - name: Scheduler
     uid: azure.python.sdk.landingPage.services.Scheduler
     href: ~/docs-ref-services/scheduler.md
@@ -370,15 +660,6 @@
       landingPageType: Service
       children:
       - 'azure-mgmt-search*'
-  - name: Server Manager
-    uid: azure.python.sdk.landingPage.services.Server.Manager
-    href: ~/docs-ref-services/server-manager.md
-    items:
-    - name: Management
-      uid: azure.python.sdk.landingPage.services.Server.Manager.Management
-      landingPageType: Service
-      children:
-      - 'azure-mgmt-servermanage*'
   - name: Service Bus
     uid: azure.python.sdk.landingPage.services.Service.Bus
     href: ~/docs-ref-services/servicebus.md
@@ -417,19 +698,53 @@
       children:
       - 'azure-mgmt-sql*'
   - name: Storage
-    href: ~/docs-ref-services/storage.md
     uid: azure.python.sdk.landingPage.services.Storage
+    href: ~/docs-ref-services/storage-index.md
     items:
+    - name: Storage Blob
+      uid: azure.python.sdk.landingPage.services.storageblob.detail
+      href: ~/docs-ref-services/storage-blob-readme.md
+      children:
+      - 'azure-storage-blob*'
+    - name: Storage File Share
+      uid: azure.python.sdk.landingPage.services.storagefileshare.detail
+      href: ~/docs-ref-services/storage-file-share-readme.md
+      children:
+      - 'azure-storage-file*'
+    - name: Storage Queue
+      uid: azure.python.sdk.landingPage.services.storagequeue.detail
+      href: ~/docs-ref-services/storage-queue-readme.md
+      children:
+      - 'azure-storage-queue*'
+    - name: Storage Common
+      landingPageType: Service
+      uid: azure.python.sdk.landingPage.services.storagecommon.detail
+      children:
+      - 'azure-storage-common*'
     - name: Management
-      uid: azure.python.sdk.landingPage.services.Storage.Management
+      uid: azure.python.sdk.landingPage.services.storage.Management
       landingPageType: Service
       children:
       - 'azure-mgmt-storage*'
-    - name: Client
-      uid: azure.python.sdk.landingPage.services.storage.Client
+  - name: Support
+    uid: azure.python.sdk.landingPage.services.Support
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Support.Management
       landingPageType: Service
       children:
-      - 'azure-storage*'
+      - 'azure-mgmt-support'
+  - name: Synapse
+    uid: azure.python.sdk.landingPage.services.Synapse
+    landingPageType: Service
+    items:
+    - name: Management
+      uid: azure.python.sdk.landingPage.services.Synapse.Management
+      landingPageType: Service
+      children:
+      - 'azure-mgmt-synapse'
+      - 'azure-synapse'
   - name: Virtual Machines
     href: ~/docs-ref-services/virtualmachines.md
     uid: azure.python.sdk.landingPage.services.Virtual.Machines

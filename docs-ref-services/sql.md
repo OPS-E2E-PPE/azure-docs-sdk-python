@@ -2,7 +2,7 @@
 title: Azure SQL Database libraries for Python
 description: Connect to Azure SQL database using the ODBC driver and pyodbc or manage Azure SQL instances with the management API.
 author: lisawong19  
-ms.author: liwong
+ms.author: routlaw
 manager: routlaw
 ms.date: 01/09/2018
 ms.topic: reference
@@ -21,7 +21,7 @@ Work with data stored in [Azure SQL Database](/azure/sql-database/sql-database-t
 ```bash
 pip install pyodbc
 ```
-More [details](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python#install-the-python-and-database-communication-libraries) about installing the python and database communication libraries.
+More [details](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python#prerequisites) about installing the python and database communication libraries.
 
 ## Connect and execute a SQL query
 
@@ -55,7 +55,7 @@ while row:
 
 ## Connecting to ORMs
 
-pyodbc works with other ORMs such as [SQLAlchemy](http://docs.sqlalchemy.org/en/latest/dialects/mssql.html?highlight=pyodbc#module-sqlalchemy.dialects.mssql.pyodbc) and [Django](https://github.com/lionheart/django-pyodbc/). 
+pyodbc works with other ORMs such as [SQLAlchemy](https://docs.sqlalchemy.org/en/latest/dialects/mssql.html?highlight=pyodbc#module-sqlalchemy.dialects.mssql.pyodbc) and [Django](https://github.com/lionheart/django-pyodbc/). 
 
 ## [Management API](/python/api/overview/azure/sql/management)
 
@@ -72,9 +72,16 @@ pip install azure-mgmt-resource
 Create a SQL Database resource and restrict access to a range of IP addresses using a firewall rule.
 
 ```python
+from azure.common.client_factory import get_client_from_cli_profile
+from azure.mgmt.resource import ResourceManagementClient
+from azure.mgmt.sql import SqlManagementClient
+
 RESOURCE_GROUP = 'YOUR_RESOURCE_GROUP_NAME'
 LOCATION = 'eastus'  # example Azure availability zone, should match resource group
+SQL_SERVER = 'yourvirtualsqlserver'
 SQL_DB = 'YOUR_SQLDB_NAME'
+USERNAME = 'YOUR_USERNAME'
+PASSWORD = 'YOUR_PASSWORD'
 
 # create resource client
 resource_client = get_client_from_cli_profile(ResourceManagementClient)
@@ -86,7 +93,7 @@ sql_client = get_client_from_cli_profile(SqlManagementClient)
 # Create a SQL server
 server = sql_client.servers.create_or_update(
     RESOURCE_GROUP,
-    SQL_DB,
+    SQL_SERVER,
     {
         'location': LOCATION,
         'version': '12.0', # Required for create
@@ -95,9 +102,22 @@ server = sql_client.servers.create_or_update(
     }
 )
 
+# Create a SQL database in the Basic tier
+database = sql_client.databases.create_or_update(
+    RESOURCE_GROUP,
+    SQL_SERVER,
+    SQL_DB,
+    {
+        'location': LOCATION,
+        'collation': 'SQL_Latin1_General_CP1_CI_AS',
+        'create_mode': 'default',
+        'requested_service_objective_name': 'Basic'
+    }
+)
+
 # Open access to this server for IPs
 firewall_rule = sql_client.firewall_rules.create_or_update(
-    RESOURCE_GROUP
+    RESOURCE_GROUP,
     SQL_DB,
     "firewall_rule_name_123.123.123.123",
     "123.123.123.123", # Start ip range

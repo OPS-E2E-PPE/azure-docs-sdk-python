@@ -3,7 +3,7 @@ title: Azure Monitoring libraries for python
 description: Reference for Azure Monitoring libraries for python
 keywords: Azure, python, SDK, API, Monitoring
 author: lisawong19
-ms.author: liwong
+ms.author: routlaw
 manager: douge
 
 ms.date: 07/19/2017
@@ -79,7 +79,7 @@ metrics_data = client.metrics.list(
     resource_id,
     timespan="{}/{}".format(yesterday, today),
     interval='PT1H',
-    metric='Percentage CPU',
+    metricnames='Percentage CPU',
     aggregation='Total'
 )
 

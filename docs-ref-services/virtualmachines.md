@@ -3,7 +3,7 @@ title: Azure Virtual Machine libraries for Python
 description: 
 keywords: Azure, Python, SDK, API, Compute , Virtual Machines
 author: lisawong19
-ms.author: liwong
+ms.author: routlaw
 manager: douge
 ms.date: 06/09/2017
 ms.topic: article
@@ -28,8 +28,8 @@ Create, configure, manage and scale Windows and Linux virtual machines in Azure 
 Install the library via pip.
 
 ```bash
-pip install azure-mgmt-compute 
-```   
+pip install azure-mgmt-compute
+```
 
 ### Example
 
@@ -85,6 +85,6 @@ View the [complete list](https://azure.microsoft.com/resources/samples/?platform
 [2]: https://github.com/Azure-Samples/resource-manager-python-manage-resources-with-msi
 [3]: https://github.com/Azure-Samples/compute-python-msi-vm
 [4]: https://azure.microsoft.com/resources/samples/network-python-manage-loadbalancer
-[5]: ../docs-ref-conceptual/python-sdk-azure-samples-managed-disks.md
-[6]: ../docs-ref-conceptual/python-sdk-azure-samples-list-images.md
-[7]: ../docs-ref-conceptual/python-sdk-azure-samples-monitor-vms.md
+[5]: /azure/python/python-sdk-azure-samples-managed-disks
+[6]: /azure/python/python-sdk-azure-samples-list-images
+[7]: /azure/python/python-sdk-azure-samples-monitor-vms

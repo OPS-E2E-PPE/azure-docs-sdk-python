@@ -1,0 +1,18 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - azure.mgmt.datalake.store.models.firewall_rule_paged.FirewallRulePaged
+  fullName: azure.mgmt.datalake.store.models.firewall_rule_paged
+  langs:
+  - python
+  module: azure.mgmt.datalake.store.models.firewall_rule_paged
+  name: firewall_rule_paged
+  type: module
+  uid: azure.mgmt.datalake.store.models.firewall_rule_paged
+references:
+- fullName: azure.mgmt.datalake.store.models.firewall_rule_paged.FirewallRulePaged
+  isExternal: false
+  name: FirewallRulePaged
+  parent: azure.mgmt.datalake.store.models.firewall_rule_paged
+  uid: azure.mgmt.datalake.store.models.firewall_rule_paged.FirewallRulePaged

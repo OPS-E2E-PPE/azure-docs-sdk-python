@@ -1,0 +1,65 @@
+- name: Reference
+  uid: azure.python.sdk.landingPage.reference
+  landingPageType: Root
+  expanded: true
+  items:
+  - name: Core
+    uid: azure.python.sdk.landingPage.services.Core.Preview
+    landingPageType: Service
+    children:
+      - 'azure-core-tracing-opentelemetry'
+      - 'azure-core-tracing-opencensus'
+  - name: Cosmos DB
+    uid: azure.python.sdk.landingPage.services.Cosmos.Preview
+    href: ~/docs-ref-services/cosmos-readme.md
+    children:
+      - 'azure-cosmos*'
+  - name: Event Hubs
+    uid: azure.python.sdk.landingPage.services.EventHub.Preview
+    landingPageType: Service
+    children:
+      - 'azure-eventhub*'
+  - name: Form Recognizer
+    uid: azure.python.sdk.landingPage.services.FormRecognizer.Preview
+    landingPageType: Service
+    children:
+      - 'azure-ai-formrecognizer*'
+  - name: Identity
+    uid: azure.python.sdk.landingPage.services.Identity.Preview
+    landingPageType: Service
+    children:
+      - 'azure-identity'
+  - name: Key Vault
+    uid: azure.python.sdk.landingPage.services.Key.Vault.Preview
+    landingPageType: Service
+    children:
+      - 'azure-keyvault-certificates*'
+      - 'azure-keyvault-keys*'
+      - 'azure-keyvault-secrets*'
+  - name: Storage
+    uid: azure.python.sdk.landingPage.services.Storage.Preview
+    landingPageType: Service
+    children:
+      - 'azure-storage-file-share*'
+      - 'azure-storage-file-datalake*'
+  - name: Search
+    uid: azure.python.sdk.landingPage.services.Search.Preview
+    href: ~/docs-ref-services/search-documents-readme.md
+    children:
+      - 'azure-search'
+      - 'azure-search-documents'
+  - name: Service Bus
+    uid: azure.python.sdk.landingPage.services.servicebus.Preview
+    landingPageType: Service
+    children:
+      - 'azure-servicebus'
+  - name: Text Analytics
+    uid: azure.python.sdk.landingPage.services.TextAnalytics.Preview
+    href: ~/docs-ref-services/ai-textanalytics-readme.md
+    children:
+      - 'azure-ai-textanalytics'
+  - name: Other
+    uid: azure.python.sdk.landingPage.services.other.Preview
+    landingPageType: Service
+    children:
+    - '*'
