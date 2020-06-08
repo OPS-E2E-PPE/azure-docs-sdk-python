@@ -7,7 +7,6 @@
           "**/*.yml"
         ],
         "src": "docs-ref-services",
-        "version": "azure-python",
         "group": "latest",
         "dest": "api/overview/azure"
       },
@@ -16,7 +15,6 @@
           "**/*.md"
         ],
         "src": "docs-ref-conceptual",
-        "version": "azure-python",
         "dest": "azure",
         "group": "latest",
         "exclude": [
@@ -29,7 +27,6 @@
           "**/*.yml"          
         ],
         "src": "docs-ref-autogen",
-        "version": "azure-python",
         "group": "latest",
         "dest": "api",
         "exclude": [
@@ -42,7 +39,6 @@
           "**/*.yml"          
         ],
         "src": "eph/docs-ref-autogen",
-        "version": "azure-python",
         "group": "latest",
         "dest": "api",
         "exclude": [
@@ -55,7 +51,6 @@
           "**/*.yml"
         ],
         "src": "preview/docs-ref-autogen",
-        "version": "azure-python-preview",
         "group": "preview",
         "dest": "api",
         "exclude": [
@@ -68,7 +63,6 @@
           "**/*.yml"
         ],
         "src": "previous/docs-ref-autogen",
-        "version": "azure-python-previous",
         "group": "previous",
         "dest": "api",
         "exclude": [
@@ -82,7 +76,6 @@
         ],
         "src": "bread",
         "dest": "azure/bread",
-        "version": "azure-python",
         "group": "latest",
         "exclude": [
           "**/obj/**",
@@ -95,7 +88,6 @@
         ],
         "src": "bread",
         "dest": "azure/bread_preview",
-        "version": "azure-python-preview",
         "group": "preview",
         "exclude": [
           "**/obj/**",
@@ -108,7 +100,6 @@
         ],
         "src": "bread",
         "dest": "azure/bread_previous",
-        "version": "azure-python-previous",
         "group": "previous",
         "exclude": [
           "**/obj/**",
@@ -123,7 +114,6 @@
           "**/*.jpg"
         ],
         "src": "docs-ref-conceptual",
-        "version": "azure-python",
         "group": "latest",
         "dest": "azure",
         "exclude": [
@@ -137,7 +127,6 @@
           "**/*.jpg"
         ],
         "src": "docs-ref-conceptual",
-        "version": "azure-python-preview",
         "group": "preview",
         "dest": "azure",
         "exclude": [
@@ -146,26 +135,6 @@
         ]
       }
     ],
-    "versions": {
-      "azure-python": {
-        "dest": "azure-python"
-      }
-    },
-    "groups": {
-      "preview": {
-        "dest": "preview",
-        "moniker_range": "azure-python-preview"
-      },
-      "latest": {
-        "dest": "latest",
-        "moniker_range": "azure-python"
-      },
-      "previous": {
-        "dest": "previous",
-        "moniker_range": "azure-python-previous"
-      }
-
-    },
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
@@ -174,14 +143,6 @@
       "brand": "azure"
     },
     "fileMetadata": {
-      "monikers": {
-        "docs-ref-autogen/**": [
-          "azure-python"
-        ],
-        "docs-ref-services/**": [
-          "azure-python"
-        ]
-      },
       "author": {
         "docs-ref-autogen/**/*.yml": "lmazuel"
       },
