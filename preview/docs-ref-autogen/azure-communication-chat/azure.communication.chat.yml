@@ -1,0 +1,23 @@
+### YamlMime:PythonPackage
+uid: azure.communication.chat
+name: chat
+fullName: azure.communication.chat
+type: import
+classes:
+- azure.communication.chat.ChatClient
+- azure.communication.chat.ChatThreadClient
+- azure.communication.chat.ChatMessage
+- azure.communication.chat.ChatMessageContent
+- azure.communication.chat.ChatMessageReadReceipt
+- azure.communication.chat.SendChatMessageResult
+- azure.communication.chat.ChatThread
+- azure.communication.chat.ChatThreadInfo
+- azure.communication.chat.ChatThreadParticipant
+- azure.communication.chat.CreateChatThreadResult
+- azure.communication.chat.CommunicationError
+packages:
+- azure.communication.chat.aio
+modules:
+- azure.communication.chat.communication_identifier_serializer
+enums:
+- azure.communication.chat.ChatMessageType

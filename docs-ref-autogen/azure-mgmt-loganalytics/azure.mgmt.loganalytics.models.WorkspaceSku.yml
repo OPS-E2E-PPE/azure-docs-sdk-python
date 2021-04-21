@@ -1,33 +1,45 @@
-### YamlMime:UniversalReference
-api_name: []
-items:
-- children: []
-  class: azure.mgmt.loganalytics.models.WorkspaceSku
-  fullName: azure.mgmt.loganalytics.models.WorkspaceSku
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: msrest.serialization.Model
-  langs:
-  - python
-  module: azure.mgmt.loganalytics.models
-  name: WorkspaceSku
-  summary: 'The SKU (tier) of a workspace.
+### YamlMime:PythonClass
+uid: azure.mgmt.loganalytics.models.WorkspaceSku
+name: WorkspaceSku
+fullName: azure.mgmt.loganalytics.models.WorkspaceSku
+module: azure.mgmt.loganalytics.models
+inheritances:
+- msrest.serialization.Model
+summary: 'The SKU (tier) of a workspace.
 
 
-    All required parameters must be populated in order to send to Azure.'
-  syntax:
-    content: WorkspaceSku(*, name, **kwargs) -> None
-    parameters:
-    - description: 'Required. The name of the SKU. Possible values include:
+  Variables are only populated by the server, and will be ignored when sending a request.
 
-        ''Free'', ''Standard'', ''Premium'', ''PerNode'', ''PerGB2018'', ''Standalone'',
 
-        ''CapacityReservation'''
-      id: name
-      type:
-      - str
-      - azure.mgmt.loganalytics.models.WorkspaceSkuNameEnum
-  type: class
-  uid: azure.mgmt.loganalytics.models.WorkspaceSku
-references: []
+  All required parameters must be populated in order to send to Azure.'
+constructor:
+  syntax: 'WorkspaceSku(*, name: typing.Union[str, _ForwardRef(''WorkspaceSkuNameEnum'')],
+    capacity_reservation_level: typing.Union[int, NoneType] = None, **kwargs)'
+  parameters:
+  - name: name
+    description: 'Required. The name of the SKU. Possible values include: "Free",
+      "Standard",
+
+      "Premium", "PerNode", "PerGB2018", "Standalone", "CapacityReservation", "LACluster".'
+    isRequired: true
+    types:
+    - <xref:str>
+    - <xref:azure.mgmt.loganalytics.models.WorkspaceSkuNameEnum>
+  - name: capacity_reservation_level
+    description: 'The capacity reservation level for this workspace, when
+
+      CapacityReservation sku is selected.'
+    isRequired: true
+    types:
+    - <xref:int>
+variables:
+- description: 'The maximum capacity reservation level available for this
+
+    workspace, when CapacityReservation sku is selected.'
+  name: max_capacity_reservation_level
+  types:
+  - <xref:int>
+- description: The last time when the sku was updated.
+  name: last_sku_update
+  types:
+  - <xref:str>

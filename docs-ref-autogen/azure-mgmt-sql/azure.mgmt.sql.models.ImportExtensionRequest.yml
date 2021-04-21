@@ -1,96 +1,79 @@
-### YamlMime:UniversalReference
-api_name: []
-items:
-- children:
-  - azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
-  class: azure.mgmt.sql.models.ImportExtensionRequest
-  fullName: azure.mgmt.sql.models.ImportExtensionRequest
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: msrest.serialization.Model
-  langs:
-  - python
-  module: azure.mgmt.sql.models
-  name: ImportExtensionRequest
-  summary: 'Import database parameters.
+### YamlMime:PythonClass
+uid: azure.mgmt.sql.models.ImportExtensionRequest
+name: ImportExtensionRequest
+fullName: azure.mgmt.sql.models.ImportExtensionRequest
+module: azure.mgmt.sql.models
+inheritances:
+- msrest.serialization.Model
+summary: 'Import database parameters.
 
 
-    Variables are only populated by the server, and will be ignored when
+  Variables are only populated by the server, and will be ignored when sending a request.'
+constructor:
+  syntax: 'ImportExtensionRequest(*, name: typing.Union[str, NoneType] = None, type:
+    typing.Union[str, NoneType] = None, storage_key_type: typing.Union[str, _ForwardRef(''StorageKeyType''),
+    NoneType] = None, storage_key: typing.Union[str, NoneType] = None, storage_uri:
+    typing.Union[str, NoneType] = None, administrator_login: typing.Union[str, NoneType]
+    = None, administrator_login_password: typing.Union[str, NoneType] = None, authentication_type:
+    typing.Union[str, _ForwardRef(''AuthenticationType''), NoneType] = ''SQL'', **kwargs)'
+  parameters:
+  - name: name
+    description: The name of the extension.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: type
+    description: The type of the extension.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: storage_key_type
+    description: 'The type of the storage key to use. Possible values include:
 
-    sending a request.
+      "StorageAccessKey", "SharedAccessKey".'
+    isRequired: true
+    types:
+    - <xref:str>
+    - <xref:azure.mgmt.sql.models.StorageKeyType>
+  - name: storage_key
+    description: 'The storage key to use.  If storage key type is SharedAccessKey,
+      it must be
 
+      preceded with a "?.".'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: storage_uri
+    description: The storage uri to use.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: administrator_login
+    description: The name of the SQL administrator.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: administrator_login_password
+    description: The password of the SQL administrator.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: authentication_type
+    description: 'The authentication type. Possible values include: "SQL",
 
-    All required parameters must be populated in order to send to Azure.'
-  syntax:
-    content: 'ImportExtensionRequest(*, storage_key_type, storage_key: str, storage_uri:
-      str, administrator_login: str, administrator_login_password: str, name: str
-      = None, type: str = None, authentication_type=''SQL'', **kwargs) -> None'
-    parameters:
-    - description: The name of the extension.
-      id: name
-      type:
-      - str
-    - description: The type of the extension.
-      id: type
-      type:
-      - str
-    - description: 'Required. The type of the storage key to use.
+      "ADPassword". Default value: "SQL".'
+    isRequired: true
+    types:
+    - <xref:str>
+    - <xref:azure.mgmt.sql.models.AuthenticationType>
+variables:
+- description: 'The type of import operation being performed. This is always Import.
 
-        Possible values include: ''StorageAccessKey'', ''SharedAccessKey'''
-      id: storage_key_type
-      type:
-      - str
-      - azure.mgmt.sql.models.StorageKeyType
-    - description: 'Required. The storage key to use.  If storage key type
-
-        is SharedAccessKey, it must be preceded with a "?."'
-      id: storage_key
-      type:
-      - str
-    - description: Required. The storage uri to use.
-      id: storage_uri
-      type:
-      - str
-    - description: Required. The name of the SQL administrator.
-      id: administrator_login
-      type:
-      - str
-    - description: 'Required. The password of the SQL
-
-        administrator.'
-      id: administrator_login_password
-      type:
-      - str
-    - description: 'The authentication type. Possible values
-
-        include: ''SQL'', ''ADPassword''. Default value: "SQL" .'
-      id: authentication_type
-      type:
-      - str
-      - azure.mgmt.sql.models.AuthenticationType
-    variables:
-    - description: 'Required. The type of import operation being
-
-        performed. This is always Import. Default value: "Import" .'
-      id: operation_mode
-      type:
-      - str
-  type: class
-  uid: azure.mgmt.sql.models.ImportExtensionRequest
-- class: azure.mgmt.sql.models.ImportExtensionRequest
-  fullName: azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
-  langs:
-  - python
-  module: azure.mgmt.sql.models
+    Default value: "Import".'
   name: operation_mode
-  syntax:
-    content: operation_mode = 'Import'
-  type: attribute
-  uid: azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
-references:
-- fullName: azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
-  isExternal: false
+  types:
+  - <xref:str>
+attributes:
+- uid: azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
   name: operation_mode
-  parent: azure.mgmt.sql.models.ImportExtensionRequest
-  uid: azure.mgmt.sql.models.ImportExtensionRequest.operation_mode
+  signature: operation_mode = 'Import'

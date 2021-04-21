@@ -1,169 +1,183 @@
-### YamlMime:UniversalReference
-api_name: []
-items:
-- children: []
-  class: azure.cognitiveservices.vision.customvision.training.models.CustomVisionError
-  fullName: azure.cognitiveservices.vision.customvision.training.models.CustomVisionError
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: msrest.serialization.Model
-  langs:
-  - python
-  module: azure.cognitiveservices.vision.customvision.training.models
-  name: CustomVisionError
-  summary: 'CustomVisionError.
+### YamlMime:PythonClass
+uid: azure.cognitiveservices.vision.customvision.training.models.CustomVisionError
+name: CustomVisionError
+fullName: azure.cognitiveservices.vision.customvision.training.models.CustomVisionError
+module: azure.cognitiveservices.vision.customvision.training.models
+inheritances:
+- msrest.serialization.Model
+summary: 'CustomVisionError.
 
 
-    All required parameters must be populated in order to send to Azure.'
-  syntax:
-    content: 'CustomVisionError(*, code, message: str, **kwargs) -> None'
-    parameters:
-    - description: 'Required. The error code. Possible values include: ''NoError'',
+  All required parameters must be populated in order to send to Azure.'
+constructor:
+  syntax: 'CustomVisionError(*, code, message: str, **kwargs) -> None'
+  parameters:
+  - name: code
+    description: 'Required. The error code. Possible values include: ''NoError'',
 
-        ''BadRequest'', ''BadRequestExceededBatchSize'', ''BadRequestNotSupported'',
+      ''BadRequest'', ''BadRequestExceededBatchSize'', ''BadRequestNotSupported'',
 
-        ''BadRequestInvalidIds'', ''BadRequestProjectName'',
+      ''BadRequestInvalidIds'', ''BadRequestProjectName'',
 
-        ''BadRequestProjectNameNotUnique'', ''BadRequestProjectDescription'',
+      ''BadRequestProjectNameNotUnique'', ''BadRequestProjectDescription'',
 
-        ''BadRequestProjectUnknownDomain'',
+      ''BadRequestProjectUnknownDomain'',
 
-        ''BadRequestProjectUnknownClassification'',
+      ''BadRequestProjectUnknownClassification'',
 
-        ''BadRequestProjectUnsupportedDomainTypeChange'',
+      ''BadRequestProjectUnsupportedDomainTypeChange'',
 
-        ''BadRequestProjectUnsupportedExportPlatform'',
+      ''BadRequestProjectUnsupportedExportPlatform'',
 
-        ''BadRequestProjectImagePreprocessingSettings'',
+      ''BadRequestProjectImagePreprocessingSettings'',
 
-        ''BadRequestProjectDuplicated'', ''BadRequestIterationName'',
+      ''BadRequestProjectDuplicated'', ''BadRequestIterationName'',
 
-        ''BadRequestIterationNameNotUnique'', ''BadRequestIterationDescription'',
+      ''BadRequestIterationNameNotUnique'', ''BadRequestIterationDescription'',
 
-        ''BadRequestIterationIsNotTrained'', ''BadRequestIterationValidationFailed'',
+      ''BadRequestIterationIsNotTrained'', ''BadRequestIterationValidationFailed'',
 
-        ''BadRequestWorkspaceCannotBeModified'', ''BadRequestWorkspaceNotDeletable'',
+      ''BadRequestWorkspaceCannotBeModified'', ''BadRequestWorkspaceNotDeletable'',
 
-        ''BadRequestTagName'', ''BadRequestTagNameNotUnique'',
+      ''BadRequestTagName'', ''BadRequestTagNameNotUnique'',
 
-        ''BadRequestTagDescription'', ''BadRequestTagType'',
+      ''BadRequestTagDescription'', ''BadRequestTagType'',
 
-        ''BadRequestMultipleNegativeTag'', ''BadRequestImageTags'',
+      ''BadRequestMultipleNegativeTag'', ''BadRequestMultipleGeneralProductTag'',
 
-        ''BadRequestImageRegions'', ''BadRequestNegativeAndRegularTagOnSameImage'',
+      ''BadRequestImageTags'', ''BadRequestImageRegions'',
 
-        ''BadRequestRequiredParamIsNull'', ''BadRequestIterationIsPublished'',
+      ''BadRequestNegativeAndRegularTagOnSameImage'',
 
-        ''BadRequestInvalidPublishName'', ''BadRequestInvalidPublishTarget'',
+      ''BadRequestUnsupportedDomain'', ''BadRequestRequiredParamIsNull'',
 
-        ''BadRequestUnpublishFailed'', ''BadRequestIterationNotPublished'',
+      ''BadRequestIterationIsPublished'', ''BadRequestInvalidPublishName'',
 
-        ''BadRequestSubscriptionApi'', ''BadRequestExceedProjectLimit'',
+      ''BadRequestInvalidPublishTarget'', ''BadRequestUnpublishFailed'',
 
-        ''BadRequestExceedIterationPerProjectLimit'',
+      ''BadRequestIterationNotPublished'', ''BadRequestSubscriptionApi'',
 
-        ''BadRequestExceedTagPerProjectLimit'', ''BadRequestExceedTagPerImageLimit'',
+      ''BadRequestExceedProjectLimit'',
 
-        ''BadRequestExceededQuota'', ''BadRequestCannotMigrateProjectWithName'',
+      ''BadRequestExceedIterationPerProjectLimit'',
 
-        ''BadRequestNotLimitedTrial'', ''BadRequestImageBatch'',
+      ''BadRequestExceedTagPerProjectLimit'', ''BadRequestExceedTagPerImageLimit'',
 
-        ''BadRequestImageStream'', ''BadRequestImageUrl'', ''BadRequestImageFormat'',
+      ''BadRequestExceededQuota'', ''BadRequestCannotMigrateProjectWithName'',
 
-        ''BadRequestImageSizeBytes'', ''BadRequestImageExceededCount'',
+      ''BadRequestNotLimitedTrial'', ''BadRequestImageBatch'',
 
-        ''BadRequestTrainingNotNeeded'',
+      ''BadRequestImageStream'', ''BadRequestImageUrl'', ''BadRequestImageFormat'',
 
-        ''BadRequestTrainingNotNeededButTrainingPipelineUpdated'',
+      ''BadRequestImageSizeBytes'', ''BadRequestImageDimensions'',
 
-        ''BadRequestTrainingValidationFailed'',
+      ''BadRequestImageAspectRatio'', ''BadRequestImageExceededCount'',
 
-        ''BadRequestClassificationTrainingValidationFailed'',
+      ''BadRequestTrainingNotNeeded'',
 
-        ''BadRequestMultiClassClassificationTrainingValidationFailed'',
+      ''BadRequestTrainingNotNeededButTrainingPipelineUpdated'',
 
-        ''BadRequestMultiLabelClassificationTrainingValidationFailed'',
+      ''BadRequestTrainingValidationFailed'',
 
-        ''BadRequestDetectionTrainingValidationFailed'',
+      ''BadRequestClassificationTrainingValidationFailed'',
 
-        ''BadRequestTrainingAlreadyInProgress'',
+      ''BadRequestMultiClassClassificationTrainingValidationFailed'',
 
-        ''BadRequestDetectionTrainingNotAllowNegativeTag'',
+      ''BadRequestMultiLabelClassificationTrainingValidationFailed'',
 
-        ''BadRequestInvalidEmailAddress'',
+      ''BadRequestDetectionTrainingValidationFailed'',
 
-        ''BadRequestDomainNotSupportedForAdvancedTraining'',
+      ''BadRequestTrainingAlreadyInProgress'',
 
-        ''BadRequestExportPlatformNotSupportedForAdvancedTraining'',
+      ''BadRequestDetectionTrainingNotAllowNegativeTag'',
 
-        ''BadRequestReservedBudgetInHoursNotEnoughForAdvancedTraining'',
+      ''BadRequestInvalidEmailAddress'',
 
-        ''BadRequestExportValidationFailed'', ''BadRequestExportAlreadyInProgress'',
+      ''BadRequestRetiredDomainNotSupportedForTraining'',
 
-        ''BadRequestPredictionIdsMissing'', ''BadRequestPredictionIdsExceededCount'',
+      ''BadRequestDomainNotSupportedForAdvancedTraining'',
 
-        ''BadRequestPredictionTagsExceededCount'',
+      ''BadRequestExportPlatformNotSupportedForAdvancedTraining'',
 
-        ''BadRequestPredictionResultsExceededCount'',
+      ''BadRequestReservedBudgetInHoursNotEnoughForAdvancedTraining'',
 
-        ''BadRequestPredictionInvalidApplicationName'',
+      ''BadRequestCustomBaseModelIterationStatusNotCompleted'',
 
-        ''BadRequestPredictionInvalidQueryParameters'',
+      ''BadRequestCustomBaseModelDomainNotCompatible'',
 
-        ''BadRequestInvalidImportToken'', ''BadRequestExportWhileTraining'',
+      ''BadRequestCustomBaseModelArchitectureRetired'',
 
-        ''BadRequestInvalid'', ''UnsupportedMediaType'', ''Forbidden'', ''ForbiddenUser'',
+      ''BadRequestExportValidationFailed'', ''BadRequestExportAlreadyInProgress'',
 
-        ''ForbiddenUserResource'', ''ForbiddenUserSignupDisabled'',
+      ''BadRequestPredictionIdsMissing'', ''BadRequestPredictionIdsExceededCount'',
 
-        ''ForbiddenUserSignupAllowanceExceeded'', ''ForbiddenUserDoesNotExist'',
+      ''BadRequestPredictionTagsExceededCount'',
 
-        ''ForbiddenUserDisabled'', ''ForbiddenUserInsufficientCapability'',
+      ''BadRequestPredictionResultsExceededCount'',
 
-        ''ForbiddenDRModeEnabled'', ''ForbiddenInvalid'', ''NotFound'',
+      ''BadRequestPredictionInvalidApplicationName'',
 
-        ''NotFoundProject'', ''NotFoundProjectDefaultIteration'', ''NotFoundIteration'',
+      ''BadRequestPredictionInvalidQueryParameters'',
 
-        ''NotFoundIterationPerformance'', ''NotFoundTag'', ''NotFoundImage'',
+      ''BadRequestInvalidImportToken'', ''BadRequestExportWhileTraining'',
 
-        ''NotFoundDomain'', ''NotFoundApimSubscription'', ''NotFoundInvalid'',
+      ''BadRequestImageMetadataKey'', ''BadRequestImageMetadataValue'',
 
-        ''Conflict'', ''ConflictInvalid'', ''ErrorUnknown'', ''ErrorIterationCopyFailed'',
+      ''BadRequestOperationNotSupported'', ''BadRequestInvalidArtifactUri'',
 
-        ''ErrorPreparePerformanceMigrationFailed'', ''ErrorProjectInvalidWorkspace'',
+      ''BadRequestCustomerManagedKeyRevoked'', ''BadRequestInvalidUri'',
 
-        ''ErrorProjectInvalidPipelineConfiguration'', ''ErrorProjectInvalidDomain'',
+      ''BadRequestInvalid'', ''UnsupportedMediaType'', ''Forbidden'', ''ForbiddenUser'',
 
-        ''ErrorProjectTrainingRequestFailed'', ''ErrorProjectImportRequestFailed'',
+      ''ForbiddenUserResource'', ''ForbiddenUserSignupDisabled'',
 
-        ''ErrorProjectExportRequestFailed'', ''ErrorFeaturizationServiceUnavailable'',
+      ''ForbiddenUserSignupAllowanceExceeded'', ''ForbiddenUserDoesNotExist'',
 
-        ''ErrorFeaturizationQueueTimeout'', ''ErrorFeaturizationInvalidFeaturizer'',
+      ''ForbiddenUserDisabled'', ''ForbiddenUserInsufficientCapability'',
 
-        ''ErrorFeaturizationAugmentationUnavailable'',
+      ''ForbiddenDRModeEnabled'', ''ForbiddenInvalid'', ''NotFound'',
 
-        ''ErrorFeaturizationUnrecognizedJob'',
+      ''NotFoundProject'', ''NotFoundProjectDefaultIteration'', ''NotFoundIteration'',
 
-        ''ErrorFeaturizationAugmentationError'', ''ErrorExporterInvalidPlatform'',
+      ''NotFoundIterationPerformance'', ''NotFoundTag'', ''NotFoundImage'',
 
-        ''ErrorExporterInvalidFeaturizer'', ''ErrorExporterInvalidClassifier'',
+      ''NotFoundDomain'', ''NotFoundApimSubscription'', ''NotFoundInvalid'',
 
-        ''ErrorPredictionServiceUnavailable'', ''ErrorPredictionModelNotFound'',
+      ''Conflict'', ''ConflictInvalid'', ''ErrorUnknown'', ''ErrorIterationCopyFailed'',
 
-        ''ErrorPredictionModelNotCached'', ''ErrorPrediction'',
+      ''ErrorPreparePerformanceMigrationFailed'', ''ErrorProjectInvalidWorkspace'',
 
-        ''ErrorPredictionStorage'', ''ErrorRegionProposal'', ''ErrorInvalid'''
-      id: code
-      type:
-      - str
-      - azure.cognitiveservices.vision.customvision.training.models.CustomVisionErrorCodes
-    - description: 'Required. A message explaining the error reported by the
+      ''ErrorProjectInvalidPipelineConfiguration'', ''ErrorProjectInvalidDomain'',
 
-        service.'
-      id: message
-      type:
-      - str
-  type: class
-  uid: azure.cognitiveservices.vision.customvision.training.models.CustomVisionError
-references: []
+      ''ErrorProjectTrainingRequestFailed'', ''ErrorProjectImportRequestFailed'',
+
+      ''ErrorProjectExportRequestFailed'', ''ErrorFeaturizationServiceUnavailable'',
+
+      ''ErrorFeaturizationQueueTimeout'', ''ErrorFeaturizationInvalidFeaturizer'',
+
+      ''ErrorFeaturizationAugmentationUnavailable'',
+
+      ''ErrorFeaturizationUnrecognizedJob'',
+
+      ''ErrorFeaturizationAugmentationError'', ''ErrorExporterInvalidPlatform'',
+
+      ''ErrorExporterInvalidFeaturizer'', ''ErrorExporterInvalidClassifier'',
+
+      ''ErrorPredictionServiceUnavailable'', ''ErrorPredictionModelNotFound'',
+
+      ''ErrorPredictionModelNotCached'', ''ErrorPrediction'',
+
+      ''ErrorPredictionStorage'', ''ErrorRegionProposal'', ''ErrorUnknownBaseModel'',
+
+      ''ErrorServerTimeOut'', ''ErrorInvalid'''
+    isRequired: true
+    types:
+    - <xref:str>
+    - <xref:azure.cognitiveservices.vision.customvision.training.models.CustomVisionErrorCodes>
+  - name: message
+    description: 'Required. A message explaining the error reported by the
+
+      service.'
+    isRequired: true
+    types:
+    - <xref:str>

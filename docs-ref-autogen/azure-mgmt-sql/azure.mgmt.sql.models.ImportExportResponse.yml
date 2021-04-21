@@ -1,78 +1,62 @@
-### YamlMime:UniversalReference
-api_name: []
-items:
-- children: []
-  class: azure.mgmt.sql.models.ImportExportResponse
-  fullName: azure.mgmt.sql.models.ImportExportResponse
-  inheritance:
-  - inheritance:
-    - inheritance:
-      - inheritance:
-        - type: builtins.object
-        type: msrest.serialization.Model
-      type: azure.mgmt.sql.models._models_py3.Resource
-    type: azure.mgmt.sql.models._models_py3.ProxyResource
-  langs:
-  - python
-  module: azure.mgmt.sql.models
-  name: ImportExportResponse
-  summary: 'Response for Import/Export Get operation.
+### YamlMime:PythonClass
+uid: azure.mgmt.sql.models.ImportExportResponse
+name: ImportExportResponse
+fullName: azure.mgmt.sql.models.ImportExportResponse
+module: azure.mgmt.sql.models
+inheritances:
+- azure.mgmt.sql.models._models_py3.Resource
+summary: 'Response for Import/Export Get operation.
 
 
-    Variables are only populated by the server, and will be ignored when
-
-    sending a request.'
-  syntax:
-    content: ImportExportResponse(**kwargs) -> None
-    variables:
-    - description: Resource ID.
-      id: id
-      type:
-      - str
-    - description: Resource name.
-      id: name
-      type:
-      - str
-    - description: Resource type.
-      id: type
-      type:
-      - str
-    - description: The request type of the operation.
-      id: request_type
-      type:
-      - str
-    - description: The request type of the operation.
-      id: request_id
-      type:
-      - str
-    - description: The name of the server.
-      id: server_name
-      type:
-      - str
-    - description: The name of the database.
-      id: database_name
-      type:
-      - str
-    - description: The status message returned from the server.
-      id: status
-      type:
-      - str
-    - description: The operation status last modified time.
-      id: last_modified_time
-      type:
-      - str
-    - description: The operation queued time.
-      id: queued_time
-      type:
-      - str
-    - description: The blob uri.
-      id: blob_uri
-      type:
-      - str
-    - description: The error message returned from the server.
-      id: error_message
-      type:
-      - str
-  type: class
-  uid: azure.mgmt.sql.models.ImportExportResponse
-references: []
+  Variables are only populated by the server, and will be ignored when sending a request.'
+constructor:
+  syntax: ImportExportResponse(**kwargs)
+variables:
+- description: Resource ID.
+  name: id
+  types:
+  - <xref:str>
+- description: Resource name.
+  name: name
+  types:
+  - <xref:str>
+- description: Resource type.
+  name: type
+  types:
+  - <xref:str>
+- description: The request type of the operation.
+  name: request_type
+  types:
+  - <xref:str>
+- description: The request type of the operation.
+  name: request_id
+  types:
+  - <xref:str>
+- description: The name of the server.
+  name: server_name
+  types:
+  - <xref:str>
+- description: The name of the database.
+  name: database_name
+  types:
+  - <xref:str>
+- description: The status message returned from the server.
+  name: status
+  types:
+  - <xref:str>
+- description: The operation status last modified time.
+  name: last_modified_time
+  types:
+  - <xref:str>
+- description: The operation queued time.
+  name: queued_time
+  types:
+  - <xref:str>
+- description: The blob uri.
+  name: blob_uri
+  types:
+  - <xref:str>
+- description: The error message returned from the server.
+  name: error_message
+  types:
+  - <xref:str>
