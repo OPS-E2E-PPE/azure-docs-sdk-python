@@ -53,10 +53,10 @@
   "git_repository_branch_open_to_public_contributors": "master",
   "dependent_repositories": [
     {
-      "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "url": "https://github.com/junshi356/templates.docs.msft.git",
+      "branch_mapping": {},
       "branch": "master",
-      "branch_mapping": {}
+      "path_to_root": "_themes"
     },
     {
       "path_to_root": "aci-docs-sample-python",
